@@ -1,0 +1,27 @@
+@import "./ui/index.less";
+@fz-root:17px;
+html{font-size:@fz-root;
+    background-color: @colorMain;
+}
+/*
+去掉标签浏览器自带的样式
+*/
+p{margin: 0;}
+
+hr{}  
+
+
+.bg-fff,bg-white{
+    background-color: #ffffff;
+}
+
+.flex{display: flex}
+.flex-grow{
+    display:flex;
+    >div{flex-grow:1}
+} 
+.child-grow>div{flex-grow: 1;}
+.child-ml10>div:nth-of-type(n+2){
+    margin-left: 10px;
+}
+
