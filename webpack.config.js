@@ -45,7 +45,8 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/, // 不处理这两个文件夹里的内容
-        loader: 'babel-loader'
+        use:['babel-loader']
+        // loader: ''
       },
       {
         test: /\.ts$/,
@@ -58,6 +59,10 @@ module.exports = {
           options: {},
         }, ]
       },
+      {
+        test: /\.node$/,
+        use: 'node-loader'
+      }
     ]
   },
   devtool:'source-map',
@@ -68,7 +73,7 @@ module.exports = {
   },
   resolve: {
     // 用于查找模块的目录
-    extensions: ['.js', '.json', '.jsx', '.css', '.vue'],
+    extensions: ['.js', '.json', '.jsx', '.css', '.vue','.node'],
     alias: {
       '@': path.resolve(__dirname, './src'),
       '#': path.resolve(__dirname, './src/styles'),

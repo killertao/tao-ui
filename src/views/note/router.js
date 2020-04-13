@@ -6,6 +6,9 @@ import CloseZone from "./pages/closezone.vue"
 import Async from "./pages/async.vue"
 import Datatype from "./pages/datatype.vue"
 const ES6=()=>import("./pages/es6.md");
+import noteRouter from './router.node';
+var m=noteRouter.a;
+console.log(m);
 const NoteChildren=[
     {
         path:"es6",

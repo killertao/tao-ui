@@ -5,8 +5,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //  import {pathToRegexp} from 'path-to-regexp'
 var pathToRegexp = require('path-to-regexp');
-console.log(pathToRegexp.pathToRegexp(["/ui", "/ui2"]));
-
 Vue.use(VueRouter);
 import Error from "@/views/error"
 import UIFrame from "@/views/ui/ui_frame"
