@@ -1,0 +1,66 @@
+@import "./variable.less";
+/** from note->frame.less*/
+.note-container{
+    background-color:@mainbgColor;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.note-top-navmenu{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding:10px 50px 10px 20px;
+    border-bottom:solid 1px ;
+    >p{
+        font-weight: 500; 
+        font-size: 20px;
+        &:nth-child(n+2){
+          margin-left: 20px;      
+        } 
+        &:hover{
+            color:limegreen;
+            // font-weight:700;
+        }
+        &.active{
+            color: white;
+        }
+        
+    }
+}
+.note-conent-box{
+    flex-grow: 1;
+}
+/*********下面是catalog_frame css**************************/
+.frame-catalog {
+    height: 100%;
+    display: flex;
+    
+    .catalog-item {
+      cursor:pointer;
+      padding-left: 20px;
+      display: flex;
+      height: 40px;
+      align-items: center;
+      &:nth-child(n+2){
+        border-top: solid 1px red;
+      }
+      &.active,&:hover{
+        font-weight: 700; 
+        // font-size: 18px; 
+        color: @activeColor_Catalog;   
+      }
+    }
+  }
+  .catalog-left {
+    flex-shrink: 0;
+    min-width: 150px;
+    border-right: solid 1px;
+
+  }
+  .catalog-right {
+    flex-grow: 1;
+    padding:2px 0 0 5px;
+  }

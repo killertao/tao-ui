@@ -1,7 +1,5 @@
 <template>
-    <div>
-       我是笔记框架  
-    </div>
+    <div>promise</div>
 </template>
 <script>
 export default {

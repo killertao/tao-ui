@@ -3,4 +3,10 @@
          <router-view></router-view>
     </div>
 </template>
+<script>
+import '#/ui/index.less'
+export default {
+    
+}
+</script>
         

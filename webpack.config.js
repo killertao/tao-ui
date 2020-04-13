@@ -1,18 +1,38 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+console.log(path.resolve(__dirname, './src/styles'));
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  module:{
-    rules:[
-      {
+  module: {
+    rules: [{
         // 使用vue-loader解析.vue文件
         test: /\.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader'
+          },
+          {
+            loader: 'md-packing',
+            options:{
+              class:"markdown-body"
+            }
+          },
+          {
+            loader: 'vue-markdown-loader/lib/markdown-compiler',
+            options: {
+              raw: true
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
@@ -20,7 +40,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ['style-loader', 'css-loader','less-loader'],
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
         test: /\.js$/,
@@ -33,26 +53,30 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          { 
-                loader: 'file-loader',
-                options: {},
-            },
-        ]
+        use: [{
+          loader: 'file-loader',
+          options: {},
+        }, ]
       },
     ]
   },
-  resolve:{
-       // 用于查找模块的目录
-    extensions: ['.js', '.json', '.jsx', '.css','.vue'],
-    alias:{
+  devtool:'source-map',
+  resolveLoader: {
+    modules: [
+      'node_modules',path.resolve(__dirname, 'loaders')
+    ]
+  },
+  resolve: {
+    // 用于查找模块的目录
+    extensions: ['.js', '.json', '.jsx', '.css', '.vue'],
+    alias: {
       '@': path.resolve(__dirname, './src'),
-      '&':path.resolve(__dirname, 'src','styles'),
-    
+      '#': path.resolve(__dirname, './src/styles'),
     }
   },
+
   externals: {
-    jquery: 'jQuery'
+
   },
   devServer: {
     host: '127.0.0.1',
@@ -62,16 +86,15 @@ module.exports = {
     hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
     // ...
   },
-  mode:'development',
-  plugins:[
-    new VueLoaderPlugin(),//这个插件是必须的！ 它的职责是将你定义过的其
+  mode: 'development',
+  plugins: [
+    new VueLoaderPlugin(), //这个插件是必须的！ 它的职责是将你定义过的其
     //它规则复制并应用到 .vue 文件里相应语言的块。
     //例如，如果你有一条匹配 /\.js$/ 的规则，那么它会应用到 .vue 文件里的 <script> 块。
     new HtmlWebpackPlugin({
-      filename:'index.html', // 生成的文件名称
+      filename: 'index.html', // 生成的文件名称
       template: path.resolve(__dirname, './src/index.html'), // 指定用index.html做模版
       inject: 'body' // 指定插入的<script>标签在body底部
     })
-
   ]
 };

@@ -6,24 +6,30 @@
             <div class="content-box" >
                 <div class="menu-box">
                     <div class="menu-item selected" style="border:none">JS</div>
-                    <div class="menu-item">Css</div>
+                    <div class="menu-item">Css1</div>
                     <div class="menu-item">C#学习</div>
                     <div class="menu-item">java学习</div>
                     <div class="menu-item">其他</div>
                 </div>
             </div>
-
     </div>
+    
 </template>
 <script>
-export default {
-    
-}
-
+    export default {
+        data:function(){
+            return {};
+        }
+    }
 </script>
 <style lang="less" scoped>
-
-  @navH:60px;
+    /*
+    from ui-navmenu
+    */
+    .aa{
+        font-size: 22px;
+    }
+    @navH:60px;
     .nav-box{
          box-sizing: border-box;
          height:@navH;

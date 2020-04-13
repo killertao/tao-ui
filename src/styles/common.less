@@ -1,7 +1,10 @@
-@import "./ui/index.less";
-@fz-root:17px;
-html{font-size:@fz-root;
-    background-color: @colorMain;
+/*
+from common 
+*/
+@fz-root:16px;
+html{
+    font-size:@fz-root;
+    background-color:orange;
 }
 /*
 去掉标签浏览器自带的样式
@@ -14,14 +17,31 @@ hr{}
 .bg-fff,bg-white{
     background-color: #ffffff;
 }
+.bg-red{background-color:red}
+.color-fff,.color-white{color:white}
 
+.child-grow>div{flex-grow: 1;}
+.child-ml10>div:nth-of-type(n+2){
+    margin-left: 10px;
+}
+.fullscreen{
+    width: 100vw;height: 100vh;
+}
+.fullparent{
+    width: 100%;;height: 100%;
+}
+
+.ml10{margin-left: 10px;}
+
+
+
+/*布局方面*/
 .flex{display: flex}
 .flex-grow{
     display:flex;
     >div{flex-grow:1}
 } 
-.child-grow>div{flex-grow: 1;}
-.child-ml10>div:nth-of-type(n+2){
-    margin-left: 10px;
+.flex-center{
+    display: flex;justify-content: center;align-items: center;
 }
-
+.flex-vcenter{display:flex;justify-content: center;}

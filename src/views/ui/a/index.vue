@@ -22,7 +22,6 @@ export default {
   },
   methods:{
       doChangeUsers(){
-          console.log($(".app-container"));
           this.data.arr.users=[(100*Math.random()).toFixed(0),(100*Math.random()).toFixed(0),(100*Math.random()).toFixed(0)]
       }
   },
