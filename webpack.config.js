@@ -58,10 +58,6 @@ module.exports = {
           loader: 'file-loader',
           options: {},
         }, ]
-      },
-      {
-        test: /\.node$/,
-        use: 'node-loader'
       }
     ]
   },
