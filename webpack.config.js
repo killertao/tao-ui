@@ -1,7 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-console.log(path.resolve(__dirname, './src/styles'));
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -18,7 +17,8 @@ module.exports = {
         test: /\.md$/,
         use: [
           {
-            loader: 'vue-loader'
+            loader: 'vue-loader',
+  
           },
           {
             loader: 'md-packing',
@@ -32,7 +32,8 @@ module.exports = {
               raw: true
             }
           }
-        ]
+        ],
+
       },
       {
         test: /\.css$/,

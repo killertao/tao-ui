@@ -1,7 +1,11 @@
 <template>
      <div v-cloak class="app-container">
          <router-view></router-view>
+         <!-- <footer style="height:200px;width:100%;background:black;color:white">
+        <p>111111111111111111111</p>
+        </footer> -->
      </div> 
+      
 </template>
 <script>
 import "./styles/reset.less"
