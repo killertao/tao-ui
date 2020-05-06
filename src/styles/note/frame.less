@@ -2,7 +2,7 @@
 @import "./variable.less";
 @contentWidth:55%;
 @topNavMenuHeight:50px;
-@NavContentMargin:10px;
+@containerPadBottom:20px;
 .note-container{
     box-sizing: border-box;
     height:100vh;
@@ -11,6 +11,7 @@
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
+    // padding-bottom: @containerPadBottom;
     &::-webkit-scrollbar{
       display: none;
     }
@@ -41,9 +42,12 @@
       }
     }
 }
+@NavContentMarginTop:10px;
+@NavContentMarginBottom:20px;
 .note-conent-box{
-  margin-top: @NavContentMargin;
-  height:calc(100% - @topNavMenuHeight - @NavContentMargin  );
+  margin-top: @NavContentMarginTop;
+  margin-bottom: @NavContentMarginBottom;
+  height:calc(100% - @topNavMenuHeight - @NavContentMarginTop - @NavContentMarginBottom  );
 }
 /*********下面是catalog_frame css**************************/
   .frame-catalog {
@@ -79,11 +83,12 @@
     background-color:var(--mainBgColor);
     width:@contentWidth;
     padding:5px;
+    padding-bottom:50px;
     align-self:baseline;
     // min-height:100%;
     height:100%;
     overflow:auto;
-    &::-webkit-scrollbar{
-      display: none;
-    }
+    // &::-webkit-scrollbar{
+    //   display: none;
+    // }
   }

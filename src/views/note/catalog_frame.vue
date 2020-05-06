@@ -21,6 +21,7 @@
 <script>
 import NoteVueChildren from "./pages/vue/router";
 import NoteJsChildren from "./pages/javasript/router";
+import NoteHtmlChildren from "./pages/html/router";
 import Tools from "@/untils/tools";
 export default {
   name: "CatalogFrame",
@@ -37,7 +38,8 @@ export default {
     noteCatalog: function() {
       var children= {
         vue: NoteVueChildren,
-        js: NoteJsChildren
+        js: NoteJsChildren,
+        html:NoteHtmlChildren,
       }[this.dynamicMenu];
       if(!children){
         throw new Error("找不到对应的子路由")
