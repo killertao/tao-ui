@@ -1,6 +1,5 @@
 import closure from "./closure.md"
 import memoryLeak from "./memoryLeak.md"
-
 const routerPrefix = "js/";
 const jsRouter = [{
     path: `${routerPrefix}closure`,
