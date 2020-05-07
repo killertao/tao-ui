@@ -1,15 +1,15 @@
-import js1 from "./js1.vue"
-import js2 from "./js2.vue"
+import closure from "./closure.md"
+import memoryLeak from "./memoryLeak.md"
 const routerPrefix = "js/";
 const jsRouter = [{
     path: `${routerPrefix}js1`,
-    component: js1,
-    name:"js1",
+    component: closure,
+    name:"什么是闭包",
 },
 {
-    path: `${routerPrefix}js2`,
+    path: `${routerPrefix}memoryLeak`,
     component: js2,
-    name:"js2",
+    name:"存储泄漏溢出",
 }
 ]
 export default jsRouter;

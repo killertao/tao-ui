@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script src="./observer.js"></script>
+<script src="./watcher.js"></script>
+<script src="./compile.js"></script>
+<script src="./mvvm.js"></script>
+
+</body>
+<script>
+    var vm = new MVVM({
+        data: {
+            a: 1,
+            b:{c:1},
+        }
+    });
+    var m = vm.a;
+</script>
+
+</html>
