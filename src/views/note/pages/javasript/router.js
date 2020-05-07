@@ -1,14 +1,15 @@
 import closure from "./closure.md"
 import memoryLeak from "./memoryLeak.md"
+
 const routerPrefix = "js/";
 const jsRouter = [{
-    path: `${routerPrefix}js1`,
+    path: `${routerPrefix}closure`,
     component: closure,
     name:"什么是闭包",
 },
 {
     path: `${routerPrefix}memoryLeak`,
-    component: js2,
+    component: memoryLeak,
     name:"存储泄漏溢出",
 }
 ]
