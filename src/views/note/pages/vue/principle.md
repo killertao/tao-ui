@@ -1,7 +1,7 @@
 # vue原理 [参考链接](https://www.bilibili.com/video/BV1Wp411d7Ur?p=75)
-> 数据驱动 大致3个模块 
-1.Observer 数据劫持
-2.Compiler 命令解析模块  
+> 数据驱动 大致3个模块  
+1.Observer 数据劫持     
+2.Compiler 命令解析模块       
 3.Watcher 数据变动监听模块    
 
 ## 数据劫持
@@ -26,7 +26,7 @@ function defineReactive(){
 //在 每个属性监听的时候会会创建1个闭包对象dep 这个dep dep 里的subs 用来存储当前属性用到的每个watcher
 ~~~
 
-## 模板数据解析
+## 模板数据解析 Compiler
 > 在vue 初始化的会解析模板     
   每个表达式都会都会去解析变量的值    
   在递层解析每一个属性值的时候，都会创建1个wachter    
@@ -34,7 +34,7 @@ function defineReactive(){
 
 ## Watcher 
 >是在compiler 和Observer 闭包Dep 丢下里面的1个中间维持对象  
- 用来更新vue 表达式以及当整个对象改变的时候，有新的dep 生成，将当前watchr 加入新的watcher 里面
+ 用来更新vue 表达式以及当整个对象改变的时候，有新的dep 生成，将当前watcher 加入新的watcher 里面
 
 
  ## 整体概叙
@@ -45,7 +45,7 @@ function defineReactive(){
   3.当数据改变的时候，会触发当前属性的set 方法，然后去通过 当前属性 Dep 对象里面的所有Watcher 更新重新Compiler  
   4 watcher 与dep 之前的关系， 每个dep 对应多个watcher , wather 里面要存1个当前dep 防止watcher 内重复添加到了dep 中  
   5.当改变了1个对象的时候，此时属性劫持已经破坏了，需要重新劫持。 以及吧当前watcher 加入新的属性dep 里面    
-  6.wather 是在什么时候加入Dep 里面的，实在watcher 初始化时，或者是跟新时 获取 当前属性值的触发get 方法加入
+  6.wather 是在什么时候加入Dep 里面的，实在watcher 初始化时，或者是更新时 获取当前属性值的触发get 方法加入
 
   
   

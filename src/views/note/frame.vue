@@ -19,6 +19,7 @@
 <script>
 import "#/note/frame.less";
 import CatalogFrame from "./catalog_frame";
+import noteRouter from "./router";
 export default {
   components: { CatalogFrame },
   data: function() {

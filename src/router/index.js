@@ -11,21 +11,20 @@ import UIFrame from "@/views/ui/ui_frame"
 import routerUI from "@/views/ui/router"
 import routerNote from "@/views/note/router"
 const routes = [
+    {//默认路由
+        path:"",
+        redirect:routerNote[0],
+    },
     ...routerNote,
     {
         path: "/(ui|ui2|xx)",
         component: UIFrame,
         children: routerUI
     },
-    {//默认路由是UI
-        path: "",
-        component: UIFrame,
-        children: routerUI
-    }, 
-    {
+    { //error 路由一定要放到最后所有的路由都会到这里来，这里当作错误路由的
         path: "*",
         component: Error
-    }, //一定要放到最后所有的路由都会到这里来，这里当作错误路由的
+    },
 ]
 const router = new VueRouter({
     routes,
