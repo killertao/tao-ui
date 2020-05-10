@@ -36,13 +36,14 @@ export default {
   },
   computed: {
     noteCatalog: function() {
-      var children= {
+      var children = {
         vue: NoteVueChildren,
         js: NoteJsChildren,
-        html:NoteHtmlChildren,
+        html: NoteHtmlChildren
       }[this.dynamicMenu];
-      if(!children){
-        throw new Error("找不到对应的子路由")
+      if (!children) {
+        // console.error("找不到对应的子路由");
+        return null;
       }
       return children;
     }
@@ -50,7 +51,7 @@ export default {
   methods: {
     //这里根据路由激活选中的catalog
     //switchMenu 是否是点击上面的菜单
-    reset({ route,switchMenu }) {
+    reset({ route, switchMenu }) {
       //父级路由
       var routePath = route.path.toLocaleLowerCase();
 
@@ -60,16 +61,20 @@ export default {
         this.$router.push({ name: this.noteCatalog[0].name });
         return;
       }
-     
+
       //根据取到的头部路由动态计算noteCatlog
       if (/^\/note\/(.+)\//.test(routePath)) {
         var menu = routePath.match(/^\/note\/(.+)\//)[1];
         this.dynamicMenu = menu;
       }
-     if(switchMenu){
-        this.activeIndexCatalog =0;
-       this.$router.push({ name: this.noteCatalog[0].name });
-       return;
+      if (switchMenu) {
+        if (!this.noteCatalog) {
+          this.$router.push({ path: route.path });
+          return;
+        }
+        this.activeIndexCatalog = 0;
+        this.$router.push({ name: this.noteCatalog[0].name || "" });
+        return;
       }
       //下面是在激活左边的index
       var reg = /^\/note\//;
@@ -83,7 +88,6 @@ export default {
         }
       }
       this.activeIndexCatalog = i;
-     
     },
     doActiveCatalog(item, index) {
       if (this.activeIndexCatalog == index) {

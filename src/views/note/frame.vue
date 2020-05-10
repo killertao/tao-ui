@@ -25,13 +25,13 @@ export default {
   data: function() {
     return {
       menus: [
-        { name: "vue", key: "vue" },
-        { name: "javascript", key: "js" },
-        { name: "html", key: "html" },
-        { name: "css", key: "css" },
-        { name: "任务", key: "task" },
-        { name: "摄影", key: "photography" },
-        { name: "其他", key: "other" }
+        { name: "vue", key: "vue",path:"/note/vue" },
+        { name: "javascript", key: "js",path:"/note/javascript" },
+        { name: "html", key: "html",path:"/note/javascript"},
+        { name: "css", key: "css",path:"/note/css" },
+        { name: "任务", key: "task",path:"/task"},
+        { name: "摄影", key: "photography",path:"/photogrhary" },
+        { name: "其他", key: "other",path:"/other" }
       ],
       activeItemKey: "vue"
     };
@@ -41,6 +41,10 @@ export default {
       var key = this.menus[index].key;
       if (key === this.activeItemKey) {
         return;
+      }
+      if(!["vue","js","html","css"].includes(key)){
+        this.$router.push(this.menus[index].path);
+        return ;
       }
       this.activeItemKey = key;
       this.$refs.catalogFrame.reset({

@@ -60,21 +60,23 @@
     background-color:@mainbgColor;
     flex-shrink: 0;
     min-width: 150px;
+    max-width: 300px;
     position: absolute;
     left:calc(50% + 0.5*@contentWidth + 20px);
     .catalog-item {
       cursor:pointer;
-      padding-left: 20px;
-      display: flex;
-      height: 40px;
-      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      padding: 13px 10px 13px 20px;
       &:nth-child(n+2){
         border-top: solid 1px #f2f2f2;
       }
       &.active,&:hover{
-        font-weight: 700; 
-        // font-size: 18px; 
-        color: @activeColor_Catalog;   
+        font-weight: 500; 
+        color: @activeColor_Catalog;
+        text-shadow:3px 3px 3px;   
       }
     }
   }
@@ -83,7 +85,7 @@
     background-color:var(--mainBgColor);
     width:@contentWidth;
     padding:5px;
-    padding-bottom:50px;
+    padding-bottom:100px;
     align-self:baseline;
     // min-height:100%;
     height:100%;

@@ -27,12 +27,6 @@ module.exports = {
           options: {
             class: "markdown-body"
           }
-        },
-        {
-          loader: 'vue-markdown-loader/lib/markdown-compiler',
-          options: {
-            raw: true
-          }
         }
       ],
 
