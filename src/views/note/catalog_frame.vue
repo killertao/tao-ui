@@ -13,7 +13,7 @@
         @click="doActiveCatalog(item,index)"
       >{{item.name}}</span>
     </div>
-    <div class="catalog-right">
+    <div class="catalog-right" ref="catalogRight">
       <router-view ref></router-view>
     </div>
   </div>
@@ -23,6 +23,7 @@ import NoteVueChildren from "./pages/vue/router";
 import NoteJsChildren from "./pages/javasript/router";
 import NoteHtmlChildren from "./pages/html/router";
 import Tools from "@/untils/tools";
+import tools from '../../untils/tools';
 export default {
   name: "CatalogFrame",
   components: {
@@ -94,6 +95,7 @@ export default {
         return;
       }
       this.activeIndexCatalog = index;
+      this.$refs.catalogRight.scrollTop=0;
       this.$router.push({ name: item.name }).then(() => {});
     }
   }

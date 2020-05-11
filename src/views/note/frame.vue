@@ -20,6 +20,7 @@
 import "#/note/frame.less";
 import CatalogFrame from "./catalog_frame";
 import noteRouter from "./router";
+import tools from "@/untils/tools";
 export default {
   components: { CatalogFrame },
   data: function() {
@@ -29,9 +30,12 @@ export default {
         { name: "javascript", key: "js",path:"/note/javascript" },
         { name: "html", key: "html",path:"/note/javascript"},
         { name: "css", key: "css",path:"/note/css" },
+        { name: "webpack", key: "webpack",path:"/note/css" },
+        { name: "docker", key: "docker",path:"/note/css" },
+        { name: "其他", key: "other",path:"/note/other" },
         { name: "任务", key: "task",path:"/task"},
         { name: "摄影", key: "photography",path:"/photogrhary" },
-        { name: "其他", key: "other",path:"/other" }
+      
       ],
       activeItemKey: "vue"
     };

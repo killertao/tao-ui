@@ -1,6 +1,6 @@
 import principle from "./principle.md";
 import lifeCycle from "./lifeCycle.vue";
-import basicGrammar from "./basicGrammar.vue";
+import basicGrammar from "./basicGrammar.md";
 const routerPrex="vue/";
 const NoteChildren=[
     {path:routerPrex+"Principle",component:principle,name:"vue原理"},

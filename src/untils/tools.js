@@ -71,6 +71,9 @@ export default {
             }
         }
     },
+    goTop:function(){
+        document.querySelector("body").scrollTop=0;
+    }
     //==============================================================
     
 }

@@ -8,16 +8,19 @@ from common
     --mainBgColor:#fff;
 }
 html{
-  
     font-size:@fz-root;
     background-color: var(--htmlBgColor);
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 /*
 去掉标签浏览器自带的样式
 */
 p{margin: 0;}
-
-hr{}  
+.img-w100{
+    width: 100%;
+}
 
 
 .bg-fff,bg-white{
@@ -38,9 +41,14 @@ hr{}
 }
 
 .ml10{margin-left: 10px;}
+.ml20{margin-left: 20px;}
 
-
-
+.pointer{
+    cursor: pointer;
+}
+.cur-default{
+    cursor:default;
+}
 /*布局方面*/
 .flex{display: flex}
 .flex-grow{
