@@ -1,8 +1,6 @@
 const getOptions = require("loader-utils").getOptions;
 var hljs = require('highlight.js');
 var MarkdownIt = require('markdown-it');
-
-
 module.exports = function (source) {
     let md = new MarkdownIt({
         typographer:true,
@@ -11,7 +9,7 @@ module.exports = function (source) {
               try {
                 let hljsStr= hljs.highlight(lang, str, true).value
             
-                return '<pre class="hljs"><code>' +hljsStr+
+                return '<pre v-pre class="hljs"><code>' +hljsStr+
                   '</code></pre>'
               } catch (__) {}
             }

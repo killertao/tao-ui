@@ -17,6 +17,7 @@
 import Vue from "vue";
 import App from "@/app";
 import router from "@/router/index"
+import initOther from "@/init"
 const vm=new Vue({
   router,
   render:h=>h(App)

@@ -71,9 +71,31 @@ export default {
             }
         }
     },
-    goTop:function(){
-        document.querySelector("body").scrollTop=0;
+    goTop: function () {
+        document.querySelector("body").scrollTop = 0;
+    },
+    //vNodes转html
+    vnodesToHtml:function (vnodes) {
+        var container = document.createElement("section");
+        var vNodeTODom = function (vnode) {
+            var $dom = null;
+            if (vnode.tag) {
+                $dom = document.createElement(vnode.tag);
+                vnode.children.forEach(childNode => {
+                    var childDom = vNodeTODom(childNode);
+                    $dom.appendChild(childDom);
+                });
+            } else {
+                $dom = document.createTextNode(vnode.text);
+            }
+            return $dom;
+        };
+        vnodes.forEach(vnode => {
+            var dom = vNodeTODom(vnode);
+            container.appendChild(dom);
+        });
+        var domHtml = container.innerHTML;
+        return domHtml;
     }
     //==============================================================
-    
 }

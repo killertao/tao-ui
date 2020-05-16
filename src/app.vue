@@ -18,6 +18,7 @@
     <div class="bg">
       <div class="xy xy-font">喜欢的人就去追，想做的事就去做</div>
     </div>
+    
     <div class="person" v-if="ifPerson">
       <section>
         <span class="close iconfont iconguanbi1" @click="closePerson"></span>

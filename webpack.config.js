@@ -2,6 +2,7 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');//vue 必须组件
 const HtmlWebpackPlugin = require('html-webpack-plugin');//hmtl index,页面生成插件
 const CopyPlugin = require('copy-webpack-plugin');//文件copy 插件
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;//打包分解分析组件
 const outputDir = path.resolve(__dirname, 'dist');
 module.exports = {
   entry: './src/index.js',
@@ -74,7 +75,10 @@ module.exports = {
   },
 
   externals: {
-
+    "vue":"Vue",
+    "vue-router":"VueRouter",
+    "markdown-it":"markdownit",
+    // "highlight":"highlight",
   },
   devServer: {
     host: '127.0.0.1',
@@ -98,6 +102,20 @@ module.exports = {
       [
         { from: path.resolve(__dirname, './src/static'), to: outputDir },
       ]
+    ),
+    new BundleAnalyzerPlugin(
+      {
+        analyzerMode: 'server',
+        // analyzerHost: '127.0.0.1',
+        // analyzerPort: 8889,
+        reportFilename: 'report.html',
+        defaultSizes: 'parsed',
+        openAnalyzer: true,
+        generateStatsFile: false,
+        statsFilename: 'stats.json',
+        statsOptions: null,
+        logLevel: 'info'
+      }
     ),
   ]
 };

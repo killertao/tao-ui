@@ -1,4 +1,4 @@
-# 函数
+# 函数,匿名函数自执行
 > 函数即方法    
   有两个内置内心 this,arguments,prototype 对象
   在Funtion.prototype上有bind,call,apply 方法来改变内置对象this 
@@ -37,6 +37,28 @@
 
 ## 构造函数
 > 构造函数通常是大写字母开头，使用new ConstructorFun()  创建1给对象
+
+## 匿名函数自执行
+> 主要就是用来创建1个私有作用域。不无污染外部的空间     
+  其实在ES6的 模式下使用let 声明变量就可以不需要这个东西，
+
+~~~js 
+    (function(){
+       var m=1;
+       //此时m =1 不会赋值到window.a 上， 
+    })()
+~~~
+自执行的其他形式
+~~~js
+   //1.
+   (function(window,$)(window,jquery))
+   ~function(window,$)(window,jquery)
+   -function(window,$)(window,jquery)
+   +function(window,$)(window,jquery)
+   void function(window,$)(window,jquery)
+   typeof function(window,$)(window,jquery)
+   [function(window,$)(window,jquery)]
+~~~
    
 
 

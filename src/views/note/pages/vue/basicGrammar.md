@@ -55,7 +55,7 @@
  v-if 惰性渲染，只有在值为true 的 是才会真正的渲染
  v-show,dom 一直存在，只是改变了display:block|none, v-show 不能作用在template 非实体dom元素上，因为要改变样式 dispaly
 
- ## 列表渲染
+## 列表渲染
 ~~~html
     //遍历值是1个数字
     <ul><li v-for="item in num"><li></ul>
