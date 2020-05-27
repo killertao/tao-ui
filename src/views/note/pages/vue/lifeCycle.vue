@@ -21,14 +21,10 @@
       <blockquote>deactivated：:被 keep-alive 缓存的组件停用时调用。</blockquote>
       <p>eg:</p>
   </div>
-  <codeview></codeview>
 </div>
 </template>
 <script>
-import markdown from "@/components/markdown";
-import codeview from "@/components/codeview";
 export default {
-  components: { markdown,codeview },
   data: function() {
     return {
       a: "我是里面变量a"

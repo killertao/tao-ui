@@ -1,7 +1,9 @@
 <template>
   <div>
     <div v-cloak class="app-container app">
-      <router-view></router-view>
+      <div style="min-height:100vh">
+         <router-view></router-view>
+      </div>
       <footer class="footer">
         <p>本网站没有借助任何脚手架工，纯手工一个一个模块的引入，加载。是为了更全面的了解项目的构建组成</p>
         <p>
@@ -96,10 +98,10 @@ export default {
 }
 .person {
   background: #fff;
-  width: 250px;
-  min-height: 200px;
+  /* width: 250px; */
+  width:17rem;
   position: fixed;
-  left: calc(50% + 0.5 * 55% + 20px);
+  right: 2rem;
   bottom: 0;
   z-index: 3;
 }

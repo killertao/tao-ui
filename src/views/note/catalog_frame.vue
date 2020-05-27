@@ -3,7 +3,9 @@
 -->
 <template>
   <div class="frame-catalog">
-    <!--左边导航-->
+    <div class="catalog-right" ref="catalogRight">
+      <router-view ref></router-view>
+    </div>
     <div class="catalog-left">
       <span
         v-for="(item,index) of noteCatalog"
@@ -13,15 +15,13 @@
         @click="doActiveCatalog(item,index)"
       >{{item.name}}</span>
     </div>
-    <div class="catalog-right" ref="catalogRight">
-      <router-view ref></router-view>
-    </div>
   </div>
 </template>
 <script>
 import NoteVueChildren from "./pages/vue/router";
 import NoteJsChildren from "./pages/javasript/router";
 import NoteHtmlChildren from "./pages/html/router";
+import NotePythonChildren from "./pages/python/router";
 import Tools from "@/untils/tools";
 import tools from '../../untils/tools';
 export default {
@@ -36,12 +36,16 @@ export default {
     };
   },
   computed: {
-    noteCatalog: function() {
-      var children = {
+    childrenMap:function(){
+      return  {
         vue: NoteVueChildren,
         js: NoteJsChildren,
-        html: NoteHtmlChildren
-      }[this.dynamicMenu];
+        html: NoteHtmlChildren,
+        python:NotePythonChildren.filter((item)=>!item.redirect)
+      };
+    },
+    noteCatalog: function() {
+      var children=this.childrenMap[this.dynamicMenu];
       if (!children) {
         // console.error("找不到对应的子路由");
         return null;

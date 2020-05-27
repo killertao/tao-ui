@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config webpack.config.js",
-    "build": "webpack",
-    "dev": "webpack-dev-server --config webpack.config.js"
+    "build": "webpack --config ./webpackconfig/index.js",
+    "dev": "webpack-dev-server --config ./webpackconfig/index.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "babel-loader": "^8.0.6",
+    "compression-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.1",

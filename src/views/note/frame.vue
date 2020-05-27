@@ -21,6 +21,8 @@ import "#/note/frame.less";
 import CatalogFrame from "./catalog_frame";
 import noteRouter from "./router";
 import tools from "@/untils/tools";
+
+
 export default {
   components: { CatalogFrame },
   data: function() {
@@ -30,6 +32,8 @@ export default {
         { name: "javascript", key: "js",path:"/note/javascript" },
         { name: "html", key: "html",path:"/note/javascript"},
         { name: "css", key: "css",path:"/note/css" },
+        { name: "各种特效", key: "tx",path:"/tx" },
+        { name: "python", key: "python",path:"/note/python" },
         { name: "webpack", key: "webpack",path:"/note/css" },
         { name: "docker", key: "docker",path:"/note/css" },
         { name: "其他", key: "other",path:"/note/other" },
@@ -46,7 +50,8 @@ export default {
       if (key === this.activeItemKey) {
         return;
       }
-      if(!["vue","js","html","css"].includes(key)){
+      //需要调到耳机路由里面的
+      if(!["vue","js","html","css","python"].includes(key)){
         this.$router.push(this.menus[index].path);
         return ;
       }

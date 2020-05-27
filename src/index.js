@@ -16,7 +16,7 @@
 // })
 import Vue from "vue";
 import App from "@/app";
-import router from "@/router/index"
+import router from "@/router"
 import initOther from "@/init"
 const vm=new Vue({
   router,

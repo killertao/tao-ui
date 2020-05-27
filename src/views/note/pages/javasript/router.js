@@ -5,7 +5,10 @@ import jsThis from "./this.md"
 import executionStack from "./executionStack.md"
 import prototype from "./prototype.md"
 import _event from "./event.md"
+import objectCreate from "./objectCreate";
+import eventLoop from "./eventLoop";
 import test from "./test.vue";
+
 const routerPrefix = "js/";
 const jsRouter = [
 {path: `${routerPrefix}function`,component: _function,name:"函数基本,递归,自执行"},
@@ -15,6 +18,8 @@ const jsRouter = [
 {path: `${routerPrefix}executionStack`,component: executionStack,name:"js执行栈与下上文"},
 {path: `${routerPrefix}prototype`,component: prototype,name:"原型链,new 干了什么"},
 {path: `${routerPrefix}event`,component: _event,name:"event，事件流，事件委托"},
+{path: `${routerPrefix}objectCreate`,component: objectCreate,name:"对象，对象的创建"},
+{path: `${routerPrefix}eventLoop`,component: eventLoop,name:"js运行机制(eventLoop)，微任务，宏任务"},
 {path: `${routerPrefix}test`,component: test,name:"js 测试页面"},
 ]
 export default jsRouter;
