@@ -21,7 +21,7 @@
   "homepage": "https://github.com/killertao/tao-ui#readme",
   "dependencies": {
     "axios": "^0.19.1",
-    "highlight.js": "^10.0.2",
+    "highlight.js": "^10.4.1",
     "markdown-it": "^10.0.0",
     "path-to-regexp": "^6.1.0",
     "vue": "^2.6.11",
